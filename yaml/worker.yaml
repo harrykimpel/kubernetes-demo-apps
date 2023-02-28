@@ -39,11 +39,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 5G
-            memory: 5G
-          # limits:
-          #   cpu: 150m
-          #   memory: 200Mi
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 150m
+            memory: 200Mi
         env:
         - name: NEW_RELIC_LICENSE_KEY
           valueFrom:
@@ -51,7 +51,7 @@ spec:
               name: newrelic-license-key
               key: license
         - name: NEW_RELIC_APP_NAME
-          value: Gartner-Worker
+          value: Workshop-Worker
         - name: NEW_RELIC_APPLICATION_LOGGING_LOCAL_DECORATING_ENABLED
           value: "true"
         - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_ENABLED
