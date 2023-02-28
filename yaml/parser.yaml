@@ -45,11 +45,11 @@ spec:
           periodSeconds: 5
         resources:
           requests:
-            cpu: 50m
-            memory: 100Mi
-          limits:
-            cpu: 100m
-            memory: 200Mi
+            cpu: 5G
+            memory: 5G
+          # limits:
+          #   cpu: 100m
+          #   memory: 200Mi
         env:
         - name: NEW_RELIC_LICENSE_KEY
           valueFrom:
@@ -57,7 +57,7 @@ spec:
               name: newrelic-license-key
               key: license
         - name: NEW_RELIC_APP_NAME
-          value: Workshop-Parser
+          value: Gartner-Parser
         - name: NEW_RELIC_APPLICATION_LOGGING_LOCAL_DECORATING_ENABLED
           value: "true"
         - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_ENABLED
