@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: injection-pod-quota
+spec:
+  hard:
+    pods: 11

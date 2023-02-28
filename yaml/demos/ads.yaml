@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ads
+  labels:
+    app: ads
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ads
+  template:
+    metadata:
+      labels:
+        app: ads
+    spec:
+      containers:
+      - name: ads
+        # Generates kube events for bad container image
+        image: bschmitt769/ads-servic:1.0
+        ports:
+        - containerPort: 80
