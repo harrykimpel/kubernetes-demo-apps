@@ -39,7 +39,7 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 5G
+            cpu: 5
             memory: 5G
           # limits:
           #   cpu: 150m
