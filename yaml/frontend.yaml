@@ -54,7 +54,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: newrelic-license-key
-              key: license
+              key: license-key
         - name: NEW_RELIC_APP_NAME
           value: Workshop-Frontend
         - name: NEW_RELIC_APPLICATION_LOGGING_LOCAL_DECORATING_ENABLED
