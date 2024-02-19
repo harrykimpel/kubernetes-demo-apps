@@ -1,0 +1,12 @@
+newrelic-prometheus-agent:
+  config:
+    newrelic_remote_write:
+      extra_write_relabel_configs:
+      - action: drop
+        regex: redis_exporter.+
+        source_labels:
+        - __name__
+      - action: drop
+        regex: redis_repl.+
+        source_labels:
+        - __name__
