@@ -1,16 +1,17 @@
 global:
   lowDataMode: true
-nri-prometheus:
+newrelic-prometheus-agent:
   config:
-    transformations:
-      # One or more transformations can be performed here.
-      # Options include: add_attributes, rename_attributes, copy_attributes, ignore_metrics
-      # https://docs.newrelic.com/docs/infrastructure/prometheus-integrations/install-configure-openmetrics/add-rename-or-copy-prometheus-attributes
-      - description: "Instruqt Metric Exclusion Example for Redis"
-        ignore_metrics:
-          - prefixes:
-            - redis_exporter
-            - redis_repl
+    newrelic_remote_write:
+      extra_write_relabel_configs:
+      - action: drop
+        regex: redis_exporter.+
+        source_labels:
+        - __name__
+      - action: drop
+        regex: redis_repl.+
+        source_labels:
+        - __name__
 newrelic-logging:
   fluentBit:
     # Note:
